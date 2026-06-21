@@ -28,13 +28,32 @@ const OURWORLD_SITES = [
   },
 ];
 
+const FULLSTACK_PROJECTS = [
+  {
+    name: "Moodify",
+    url: "https://github.com/zeevaki/moodify",
+    desc: "A full-stack mood-to-playlist app. Express backend saves mood history to a database; React frontend fetches and displays playlists. Built without any starter template — raw Node.js http module first, then upgraded to Express.",
+    color: "#7C3AED",
+    label: "View on GitHub",
+  },
+  {
+    name: "Weatherly",
+    url: "https://github.com/zeevaki/weatherly",
+    desc: "A full-stack weather app that proxies the OpenWeatherMap API through an Express backend — keeping the API key off the browser. React frontend with live city search, temperature, humidity, and wind data.",
+    color: "#2563EB",
+    label: "View on GitHub",
+  },
+];
+
 const SKILLS = [
   "Next.js",
   "React",
   "TypeScript",
   "Tailwind CSS",
-  "Vite",
+  "Node.js",
+  "Express",
   "REST APIs",
+  "Vite",
   "Git & GitHub",
   "Vercel Deployment",
 ];
@@ -57,7 +76,7 @@ export default function Home() {
       {/* Hero */}
       <section className="px-6 pt-24 pb-20 max-w-5xl mx-auto w-full">
         <p className="text-sm font-bold uppercase tracking-widest text-emerald-700 mb-4">
-          Frontend Developer
+          Full Stack Developer
         </p>
         <h1 className="text-4xl sm:text-6xl font-black text-slate-900 leading-tight mb-6 max-w-3xl">
           I build products that bring real communities together.
@@ -185,6 +204,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Full Stack Projects */}
+      <section className="px-6 py-24 max-w-5xl mx-auto w-full">
+        <p className="text-sm font-bold uppercase tracking-widest text-emerald-700 mb-3">
+          Full Stack Projects
+        </p>
+        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-5">
+          Backend + Frontend, End to End
+        </h2>
+        <p className="text-slate-600 font-medium max-w-2xl mb-12 leading-relaxed">
+          Built from scratch using Node.js, Express, and React — no starter kits, no shortcuts.
+          Each project has a real backend API, a React frontend, and is pushed to GitHub.
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-6">
+          {FULLSTACK_PROJECTS.map((s) => (
+            <a
+              key={s.name}
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-shadow"
+            >
+              <div className="h-1.5 w-full" style={{ backgroundColor: s.color }} />
+              <div className="p-7">
+                <h3
+                  className="text-xl font-black mb-2 group-hover:opacity-80 transition-opacity"
+                  style={{ color: s.color }}
+                >
+                  {s.name}
+                </h3>
+                <p className="text-slate-600 font-medium text-sm leading-relaxed mb-4">
+                  {s.desc}
+                </p>
+                <span
+                  className="text-xs font-black uppercase tracking-widest group-hover:underline"
+                  style={{ color: s.color }}
+                >
+                  {s.label} →
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* Skills */}
       <section className="px-6 py-24 max-w-5xl mx-auto w-full">
         <p className="text-sm font-bold uppercase tracking-widest text-emerald-700 mb-3">
@@ -222,10 +286,11 @@ export default function Home() {
             not just demos.
           </p>
           <p className="text-slate-600 font-medium leading-relaxed">
-            I taught myself frontend development by building the OurWorld Family from scratch —
-            architecture, design system, deployment, and the audience that now follows it. I'm
-            looking for a remote frontend role where I can keep building products with that same
-            level of ownership.
+            I taught myself full-stack development by building the OurWorld Family from scratch —
+            architecture, design system, deployment, and the audience that now follows it. Most
+            recently I built Moodify and Weatherly: two full-stack apps with Node.js and Express
+            backends, React frontends, and live API integrations. I'm looking for a remote
+            full-stack role where I can keep building products with that same level of ownership.
           </p>
         </div>
       </section>
